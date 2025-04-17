@@ -11,7 +11,7 @@ Only uses one cpu core.
     docker compose build
     MUSIC_DIR="/media/.../music/..." docker compose run --rm checkmusic > ohno
 
-Says a tally, writes filenames to './faulty'.
+Says a tally, writes filenames to *./ohno*.
 
 ## TODO
 
