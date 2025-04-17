@@ -1,0 +1,14 @@
+services:
+  checkmusic:
+    build:
+      context: .
+      dockerfile_inline: |
+        FROM alpine:latest
+        RUN apk add --no-cache ffmpeg perl perl-ipc-run
+        WORKDIR /app
+        CMD ["./scan.pl"]
+    container_name: checkmusic
+    volumes:
+      - ${MUSIC_DIR:-./music}:/music:ro
+      - .:/app
+    restart: "no"
